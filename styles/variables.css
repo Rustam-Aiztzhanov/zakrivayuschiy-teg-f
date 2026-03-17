@@ -1,0 +1,48 @@
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+--background-image:
+repeating-linear-gradient(
+180deg,
+#d3d3d3 0 2px,
+transparent 2px 4px
+),
+repeating-linear-gradient(
+90deg,
+#d3d3d3 0 2px,
+transparent 2px 4px
+),
+linear-gradient(
+to bottom,
+#e7e7e7 0.01%,
+#1a1a1a 100%
+);
+    --page-width: clamp(18.75rem, 100%, 43.5rem);/*максимальная ширина страницы*/
+    --header-title-font-size: clamp(2rem, 1.5rem + 2vw, 4rem); /*размер шрифта для заголовка*/
+    --header-subtitle-font-size: calc(14px + (23 - 14) * ((100vw - 375px) / (1440 - 375))); /*размер шрифта для подзаголовка*/
+    --content-width: 696px; /*максимальная ширина контента*/
+    --page-padding: 16px; /*отступы страницы от краев*/
+    
+    --main-font: "Inter-Variable", sans-serif; /*основной шрифт*/
+    --accent-font: "PressStart2P", fantasy; /*шрифт для акцентов, заголовков и надписей на картинках*/
+    --inter-width: 400; /*начальное значение толщины шрифта Inter*/
+    --title-width: 700; /*начальное значение толщины шрифта для заголовков*/
+    --main-font-size: 18px; /*основной размер шрифта*/
+    --font-size-card: 14px; /*размер шрифта для текста в карточках*/
+    --main-color: #000; /*цвет текста*/
+    --shadow-color: #fff; /*цвет тени для текста на картинках*/
+    --background-color: #fff; /*цвет фона карточек*/
+      
+    --button-font-size: 14px; /*размер шрифта для текста на кнопках*/
+    --button-text-color: #fff;/*цвет текста на кнопках*/
+    --main-border: 2px solid black; /*стиль границы для карточек и контейнера картинки*/
+    --heart-contour-color: black; /*цвет контура для сердечка*/
+    --heart-sparks-color: red; /*цвет для искр вокруг сердечка*/
+
+    --time_step: 0.3s; /*время для одного шага анимации*/
+}
+
+
+
+
+
+

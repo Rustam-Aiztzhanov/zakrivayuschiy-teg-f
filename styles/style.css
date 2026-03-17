@@ -1,0 +1,340 @@
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+*/
+
+
+/*основной контейнер*/
+.page {
+  display: flex;
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  min-block-size: 100dvb;
+  max-inline-size: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/*шапка сайта*/
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 120px;
+  margin-block: 100px;
+  border: var(--main-border);
+  background-color: var(--background-color);
+  inline-size: var(--page-width);
+  text-transform: uppercase;
+}
+
+/* Заголовок шапки */
+.header_title {
+  font-family: var(--accent-font);
+  font-size: var(--header-title-font-size);
+  line-height: 1;
+  margin-bottom: 21px;
+}
+
+/* Подзаголовок шапки */
+.header_subtitle {
+  font-family: var(--accent-font);
+  font-size: var(--header-subtitle-font-size);
+  font-weight:var( --inter-width);
+  line-height: 1;
+}
+
+/* Универсальные стили для header и main */
+.header,
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 696px;
+  margin-inline: auto;
+}
+
+/* карточка */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  margin-bottom: 49px;
+  border: var(--main-border);
+  width: 100%;
+  max-width: 696px;
+}
+
+/* заголовок карточки */
+.card_title {
+  padding: 5px 10px ;
+  font-size: var(--main-font-size);
+  font-variation-settings: "wght" var(--title-width);
+}
+
+/* Текст карточки */
+.card_text {
+  line-height: 21px;
+}
+
+/* Контейнер с изображением автобуса */
+.card_image-wrapper {
+  position: relative;
+  border-top: var(--main-border);
+  border-bottom: var(--main-border);
+}
+
+/* сама картинка в карточке */
+.card_image {
+  display: block;
+  inline-size: 100%;
+  block-size: 371px;
+  object-fit: cover;
+  object-position: 96.3% center;
+}
+
+/* надпись поверх картинки */
+.card_tag {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font);
+  font-size: var(--font-size-card);
+  opacity: 0.5;
+  text-shadow: 0 0 2px var(--shadow-color);
+  mix-blend-mode: hard-light;
+  z-index: 1;
+}
+
+/* Контент карточки (текст и кнопки) */
+.card_content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+/* Блок (кнопок) */
+.card_actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Кнопка с иконкой (сердце) */
+.card__icon-button {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  transition: outline 0.3s ease;
+}
+
+/* Обводка при фокусе */
+.card__icon-button:focus-visible {
+  outline-color: black;
+}
+
+/* Кнопка лайка с текстом */
+.card__like-button {
+  width: 130px;
+  height: 38px;
+}
+
+/* Тень под кнопками */
+.card:has(.like-icon.is-liked) .card__like-button {
+  box-shadow: 2px 2px 0 var(--main-color);
+}
+
+/* Кнопка с декоративным эффектом */
+.decorated_button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--main-border);
+  background-color: white;
+  font-family: var(--accent-font);
+  font-size: var(--button-font-size);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Текст кнопки с эффектом наложения */
+.decorated_button_text {
+  mix-blend-mode: difference;
+  color: white;
+}
+
+/* Псевдоэлемент для анимации заливки */
+.decorated_button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+/* Анимация при наведении */
+.decorated_button:hover::before {
+  transform: translateX(0);
+}
+
+/* Увеличение яркости */
+.filter_brightness {
+  filter: brightness(110%);
+}
+
+/* Ч/б эффект */
+.filter_grayscale {
+  filter: grayscale(0.8);
+}
+
+/* Усиление цвета */
+.filter_saturate {
+  filter: saturate(298%);
+}
+
+/* Изменение оттенка */
+.filter_hue-rotate {
+ filter: hue-rotate(-330deg);
+}
+
+/* Инверсия и корректировка */
+.filter_invert {
+  filter: invert(0.85) hue-rotate(20deg) brightness(1.2);
+}
+
+/* Сепия эффект */
+.filter_sepia {
+  filter: sepia(90%); 
+}
+
+/* Размытие */
+.filter_blur {
+  filter: blur(8px);
+}
+
+ /* Смешанный фильтр */
+.filter_mixed {
+  filter: invert(0.25) hue-rotate(90deg) saturate(140%) blur(2.1px);
+}
+
+/* Диалоговое окно */
+.dialog {
+  border: var(--main-border);
+  padding: 30px;
+  inline-size: 353px;
+  background-color: var(--background-color);
+}
+
+/* При открытии */
+.dialog[open] {
+  display: block;
+}
+
+/* Полупрозрачный фон вокруг */
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+/* Вертикальное центрирование и отступы */
+.dialog_content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Размер иконки */
+.dialog_icon {
+  width: 39px;
+  height: 39px;
+}
+
+/* Шрифт текста */
+.dialog_text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+ /* Размер кнопки диалога */
+.dialog_button {
+  inline-size: 100%;
+  min-block-size: 38px;
+}
+
+/* Блокировка скролла при открытом диалоге */
+body:has(.dialog[open]) {
+  overflow: hidden;
+}
+
+/* Размер SVG дискеты */
+.floppy_svg {
+  width: 28px;
+  height: 28px;
+ 
+}
+
+.dialog_icon {
+  width: 39px;
+  height: 39px;
+}
+
+ /* Кнопка сохранения размеры и центрирование */
+.save_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 306px;
+  min-height: 84px;
+  margin: 0 auto;
+  gap: 8px;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+/* Тень при фокусе */
+ .save_button:focus {
+  box-shadow: 2px 2px 0 var(--main-color);
+}
+
+/* Адаптивная кнопка для больших экранов */
+@media (min-width: 696px) {
+  .save_button {
+    flex-direction: row;
+    width: 335px;
+    height: 55px;
+  }
+
+}
+
+/* Адаптивные карточки и картинки */
+@media (min-width: 696px) {
+  .card_image-wrapper {
+    block-size: 696px;
+  }
+
+  .card_image {
+    block-size: 100%; 
+    object-fit: cover;
+    object-position: 96.3% center; 
+  }
+}

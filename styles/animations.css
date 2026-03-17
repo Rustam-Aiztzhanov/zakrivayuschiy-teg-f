@@ -1,0 +1,117 @@
+/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+*/
+
+/* Анимация сердечка при лайке — увеличивает размер от нормального до 1.25 */
+@keyframes like {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+
+/* Анимация искр — плавно появляется и исчезает */
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ===== ИСХОДНОЕ СОСТОЯНИЕ ===== */
+
+/* Центральная часть сердца прозрачная по умолчанию, плавный переход цвета при изменении состояния */
+.like-icon .core {
+  fill: transparent;
+  transition: fill var(--time_step) ease 0.03s;
+}
+
+/* Основная часть сердца прозрачная, без задержки перехода */
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill var(--time_step) ease 0s;
+}
+
+/* Контур сердца — плавная линейная смена цвета */
+.like-icon .contour {
+  transition: fill var(--time_step) linear;
+}
+
+/* ===== HOVER ===== */
+
+/* При наведении меняется цвет центральной части сердца на цвет контура */
+.card__icon-button:hover .core {
+  fill: var(--heart-contour-color);
+}
+
+/* При нажатии основная часть сердца светится цветом искр */
+.card__icon-button:hover .main-body {
+  fill: var(--heart-contour-color);
+}
+
+/* ===== ACTIVE (нажатие мышкой) ===== */
+
+
+/* Центральная часть сердца окрашена в цвет искр */
+.card__icon-button:active .core {
+  fill: var(--heart-sparks-color);
+}
+
+/* Основная часть сердца окрашена в цвет искр */
+.card__icon-button:active .main-body {
+  fill: var(--heart-sparks-color);
+}
+
+/* ===== СОСТОЯНИЕ ЛАЙКА ===== */
+
+/* Центральная часть сердца окрашена в цвет искр */
+.like-icon.is-liked .core {
+  fill: var(--heart-sparks-color);
+}
+
+/* Основная часть сердца окрашена в цвет искр */
+.like-icon.is-liked .main-body {
+  fill: var(--heart-sparks-color);
+}
+
+/* Контур сердца окрашен в цвет искр */
+.like-icon.is-liked .contour {
+  fill: var(--heart-sparks-color);
+}
+
+/* ===== АНИМАЦИЯ СЕРДЦА ===== */
+
+/* Применяет анимацию "like" один раз при переходе в состояние лайка */
+.like-icon.is-liked {
+  animation: like var(--time_step) ease-in 0.1s 1;
+  transform-origin: center;
+}
+
+/* ===== ИСКРЫ (исчезают!) ===== */
+
+/* Применяет анимацию "sparks" к элементам искр сердца */
+.like-icon.is-liked .sparks {
+  animation: sparks 0.6s ease-in;
+}
+
+/* ===== ФОКУС (TAB) ===== */
+
+/* При фокусе через клавиатуру появляется обводка для доступности */
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--main-color);
+}
