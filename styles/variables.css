@@ -1,46 +1,53 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
---background-image:
-repeating-linear-gradient(
-180deg,
-#d3d3d3 0 2px,
-transparent 2px 4px
-),
-repeating-linear-gradient(
-90deg,
-#d3d3d3 0 2px,
-transparent 2px 4px
-),
-linear-gradient(
-to bottom,
-#e7e7e7 0.01%,
-#1a1a1a 100%
-);
-    --page-width: clamp(18.75rem, 100%, 43.5rem);/*максимальная ширина страницы*/
-    --header-title-font-size: clamp(2rem, 1.5rem + 2vw, 4rem); /*размер шрифта для заголовка*/
-    --header-subtitle-font-size: calc(14px + (23 - 14) * ((100vw - 375px) / (1440 - 375))); /*размер шрифта для подзаголовка*/
-    --content-width: 696px; /*максимальная ширина контента*/
-    --page-padding: 16px; /*отступы страницы от краев*/
-    
-    --main-font: "Inter-Variable", sans-serif; /*основной шрифт*/
-    --accent-font: "PressStart2P", fantasy; /*шрифт для акцентов, заголовков и надписей на картинках*/
-    --inter-width: 400; /*начальное значение толщины шрифта Inter*/
-    --title-width: 700; /*начальное значение толщины шрифта для заголовков*/
-    --main-font-size: 18px; /*основной размер шрифта*/
-    --font-size-card: 14px; /*размер шрифта для текста в карточках*/
-    --main-color: #000; /*цвет текста*/
-    --shadow-color: #fff; /*цвет тени для текста на картинках*/
-    --background-color: #fff; /*цвет фона карточек*/
-      
-    --button-font-size: 14px; /*размер шрифта для текста на кнопках*/
-    --button-text-color: #fff;/*цвет текста на кнопках*/
-    --main-border: 2px solid black; /*стиль границы для карточек и контейнера картинки*/
-    --heart-contour-color: black; /*цвет контура для сердечка*/
-    --heart-sparks-color: red; /*цвет для искр вокруг сердечка*/
+  /* --- Декоративные элементы и фон --- */
+  /* Сложный фон: сетка из повторяющихся градиентов поверх основного перехода цветов */
+  --background-image: 
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 
-    --time_step: 0.3s; /*время для одного шага анимации*/
+  /* --- Параметры сетки и контейнеров --- */
+  /* Резиновая ширина страницы: от 300px (18.75rem) до 696px (43.5rem) */
+  --page-width: clamp(18.75rem, 100%, 43.5rem);
+  --content-width: 696px;
+  --page-padding: 16px;
+  --desktop-width: 696px; 
+
+  /* --- Типографика (Шрифты) --- */
+  --main-font: "Inter-Variable", sans-serif;
+  --accent-font: "PressStart2P", fantasy;
+  
+  /* Насыщенность (Font Weight) для вариативных шрифтов */
+  --inter-width: 410;
+  --title-width: 715;
+
+  /* Адаптивные размеры заголовков (плавно растут вместе с экраном) */
+  --header-title-font-size: clamp(2.05rem, 1.09rem + 5.1vw, 4.063rem);
+  --header-subtitle-font-size: clamp(0.010rem, 0.218rem + 2.5vw, 1.438rem);
+
+  /* Статические размеры текста */
+  --main-font-size: 18px;
+  --font-size-card: 14px;
+  --button-font-size: 14px;
+
+  /* --- Цветовая палитра --- */
+  --main-color: #000;
+  --shadow-color: #fff;
+  --background-color: #fff;
+  --button-text-color: #fff;
+
+  /* --- Компоненты и графика (Borders, Icons, UI) --- */
+  --main-border: 2px solid black;
+  
+  /* Цвета для анимации лайка (сердца) */
+  --heart-contour-color: black;
+  --heart-sparks-color: red;
+
+  /* --- Анимация --- */
+  /* Базовый шаг времени для переходов и эффектов */
+  --time_step: 0.3s;
 }
-
 
 
 
