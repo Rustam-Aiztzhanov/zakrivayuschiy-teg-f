@@ -42,21 +42,22 @@
    ========================= */
 
 /* Ядро сердца */
-.like-icon .core {
-  fill: transparent;
-  transition: fill var(--time_step) linear 0s;
+.like-icon .contour {
+  fill: var(--heart-contour-color);
+  transition: fill 0.1s linear;
 }
 
 /* Основная часть */
-.like-icon .main-body {
+.like-icon .core {
   fill: transparent;
-  transition: fill var(--time_step) linear 0.05s;
+  transition: fill 0.3s linear 0.03s;
 }
 
+
 /* Контур */
-.like-icon .contour {
-  fill: var(--heart-contour-color);
-  transition: fill var(--time_step) linear 0.06s;
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
 }
 
 /* Искры по умолчанию скрыты */
@@ -71,10 +72,12 @@
 
 .card__icon-button:hover .core {
   fill: var(--heart-contour-color);
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:hover .main-body {
   fill: var(--heart-contour-color);
+  transition: fill 0.3s linear 0.05s;
 }
 
 
@@ -84,10 +87,12 @@
 
 .card__icon-button:active .core {
   fill: var(--heart-sparks-color);
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .main-body {
   fill: var(--heart-sparks-color);
+  transition: fill 0.3s linear 0.05s;
 }
 
 
@@ -95,17 +100,19 @@
    СОСТОЯНИЕ ЛАЙКА
    ========================= */
 
-/* ВАЖНО: класс is-liked висит на .like-icon */
 .like-icon.is-liked .core {
   fill: var(--heart-sparks-color);
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-sparks-color);
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--heart-sparks-color);
+  transition: fill 0.3s linear 0.06s;
 }
 
 
@@ -115,13 +122,13 @@
 
 /* Увеличение — только ease-in (по ТЗ) */
 .like-icon.is-liked {
-  animation: like 0.3s ease-in;
+  animation: like 0.1s ease-in;
   transform-origin: center;
 }
 
 /* Искры */
 .like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.1s;
+  animation: sparks 0.3s ease-in 0.3s;
 }
 
 
@@ -129,10 +136,13 @@
    FOCUS
    ========================= */
 
-.card__icon-button:focus-visible {
-  outline: 2px solid var(--heart-contour-color);
-  transition: outline-color var(--time_step) linear;
+.card__icon-button {
+  outline: 2px solid transparent;
+  transition: outline-color 0.3s ease;
 }
 
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--main-color);
+}
 
 

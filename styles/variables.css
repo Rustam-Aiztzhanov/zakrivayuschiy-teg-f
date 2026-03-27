@@ -10,9 +10,9 @@
   /* --- Параметры сетки и контейнеров --- */
   /* Резиновая ширина страницы: от 300px (18.75rem) до 696px (43.5rem) */
   --page-width: clamp(18.75rem, 100%, 43.5rem);
-  --content-width: 696px;
+  --content-width: 700px;
   --page-padding: 16px;
-  --desktop-width: 696px; 
+  --desktop-width: 700px; 
 
   /* --- Типографика (Шрифты) --- */
   --main-font: "Inter-Variable", sans-serif;
@@ -23,8 +23,8 @@
   --title-width: 715;
 
   /* Адаптивные размеры заголовков (плавно растут вместе с экраном) */
-  --header-title-font-size: clamp(2.05rem, 1.09rem + 5.1vw, 4.063rem);
-  --header-subtitle-font-size: clamp(0.010rem, 0.218rem + 2.5vw, 1.438rem);
+  --header-title-font-size: clamp(2.05rem, 1.09rem + 5.1vw, 2.74rem);
+  --header-subtitle-font-size: clamp(14px, 2.77vw + 3.6px, 23px);
 
   /* Статические размеры текста */
   --main-font-size: 18px;
@@ -48,8 +48,3 @@
   /* Базовый шаг времени для переходов и эффектов */
   --time_step: 0.3s;
 }
-
-
-
-
-

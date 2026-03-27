@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
   padding-block: 118px;
-  margin-block: 100px;
+  margin-block: 101px;
   border: var(--main-border);
   background-color: var(--background-color);
   inline-size: var(--page-width);
@@ -72,7 +72,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--background-color);
-  margin-bottom: 48px;
+  margin-bottom: 50px;
   border: var(--main-border);
   width: 100%;
   max-width: var(--content-width);
@@ -88,6 +88,7 @@
 /* Текст карточки */
 .card_text {
   line-height: 21px;
+  font-weight: var(--inter-width);
 }
 
 /* Контейнер с изображением автобуса */
@@ -132,7 +133,7 @@
 
 /* Контент карточки (текст и кнопки) */
 .card_content {
-  padding: 25px;
+  padding: 25px 25px 23px;
   display: flex;
   flex-direction: column;
   row-gap: 25px;
@@ -142,7 +143,7 @@
 .card_actions {
   display: flex;
   justify-content: flex-end;
-  gap: 7px;
+  gap: 5px;
 }
 
 /* Общие стили кнопка с иконкой и (сердце) */
@@ -150,17 +151,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  width: 44px;
   height: 39px; 
   background: transparent;
   border: none;
   cursor: pointer;
   outline: 2px solid transparent;
   transition: outline 0.3s ease;
-}
-
-.like-icon {
-  transform: translateX(-2px);
 }
 
 /* Скрываем искры иконки лайка по умолчанию */
@@ -203,6 +200,11 @@
   background: white;
   cursor: pointer;
   overflow: hidden;
+}
+
+/*Текст в кнопке диалог*/
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 /* Текст кнопки с эффектом наложения */
@@ -278,10 +280,6 @@
   width: 100%;       
 }
 
-.dialog {
-  opacity: 0.3;
-}
-
 .dialog[open] {
   display: flex;
 }
@@ -352,22 +350,16 @@ body:has(.dialog[open]) {
   margin-bottom: 100px;
 }
 
-.decorated_button:focus-visible {
-  box-shadow: 2px 2px 0 var(--main-color);
-}
-
-
-
 @media (min-width: 696px) {
   /* шапка */
   .header {
     padding-block: 130px;
-    margin-block: 97px 96px;
+    margin-block: 96px 96px;
   }
 
   /* карточки */
   .card {
-    margin-bottom: 48px;
+    margin-bottom: 51px;
   }
 
   .card_image-wrapper {
@@ -419,9 +411,3 @@ body:has(.dialog[open]) {
     inline-size: 100%;
   }
 }
-
-
-
-
-
-
