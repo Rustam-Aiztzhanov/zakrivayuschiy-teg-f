@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
   <body class="page">
-      <div class="bg-mockup"></div>
+    <div class="bg-mockup"></div>
     <header class="header">
       <h1 class="header_title">&lt;/html&gt;</h1>
       <p class="header_subtitle">закрывающий тег</p>
@@ -413,44 +413,41 @@
         type="button"
         onclick="window['floppy_dialog'].showModal()"
         aria-controls="floppy_dialog"
-      >
+        >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 44 44"
           class="mix_difference floppy_svg"
-        >
+          >
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
         <span class="decorated_button_text">Сохранить на память</span>
       </button>
     </main>
-  
-   <dialog id="floppy_dialog" class="dialog">
-    <div class="dialog_content">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 44 44"  
-        width="39"          
-        height="39"
-        class="dialog_floppy_svg"
-      >
-    <use href="./svg/floppy.svg#floppy"></use>
-    </svg>
-     <p class="dialog_text">
-       Вставьте дискету, чтобы продолжить
-     </p>
-  </div>
-  <form method="dialog">
-    <button 
-      type="submit"
-      class="dialog_button decorated_button"
-    >
-      <span class="decorated_button_text text-uppercase">OK</span>
-    </button>
-  </form>
-</dialog>
+    <dialog id="floppy_dialog" class="dialog">
+      <div class="dialog_content">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 44 44"  
+          width="39"          
+          height="39"
+          class="dialog_floppy_svg"
+          >
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
+        <p class="dialog_text">
+          Вставьте дискету, чтобы продолжить
+        </p>
+      </div>
+      <form method="dialog">
+        <button 
+          type="submit"
+          class="dialog_button decorated_button"
+          >
+        <span class="decorated_button_text text-uppercase">OK</span>
+        </button>
+      </form>
+    </dialog>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
-
-     
