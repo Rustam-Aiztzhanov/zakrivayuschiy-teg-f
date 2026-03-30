@@ -121,9 +121,9 @@
    ========================= */
 
 /* Увеличение — только ease-in (по ТЗ) */
-.like-icon.is-liked {
-  animation: like 0.1s ease-in;
-  transform-origin: center;
+.like-icon.is-liked { 
+  animation: like 0.3s ease-in 0.1s; 
+  transform-origin: center; 
 }
 
 /* Искры */

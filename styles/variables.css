@@ -23,8 +23,8 @@
   --title-width: 715;
 
   /* Адаптивные размеры заголовков (плавно растут вместе с экраном) */
-  --header-title-font-size: clamp(2.05rem, 1.09rem + 5.1vw, 2.74rem);
-  --header-subtitle-font-size: clamp(14px, 2.77vw + 3.6px, 23px);
+  --header-title-font-size: clamp(3.0625rem, 1.25rem + 7.71vw, 4.0625rem);
+  --header-subtitle-font-size: clamp(0.875rem, -0.15rem + 4.36vw, 1.4375rem);
 
   /* Статические размеры текста */
   --main-font-size: 18px;

@@ -10,6 +10,10 @@
 
 */
 
+html {
+  font-size: 16px;
+}
+
 
 /*основной контейнер*/
 .page {
@@ -53,7 +57,7 @@
 .header_subtitle {
   font-family: var(--accent-font);
   font-size: var(--header-subtitle-font-size);
-  font-weight:var( --inter-width);
+  font-weight:var(--inter-width);
   line-height: 1;
 }
 
@@ -411,3 +415,5 @@ body:has(.dialog[open]) {
     inline-size: 100%;
   }
 }
+
+
